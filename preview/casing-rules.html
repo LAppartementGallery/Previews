@@ -1,0 +1,27 @@
+<!doctype html>
+<!-- @dsCard group="Type" name="Type · casing & tracking rules" subtitle="Where to use capitals, sentence case, and tracked labels." viewport="700x240" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="card.css">
+<style>
+.card { display: block; padding: 26px 28px; }
+.row { display: flex; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 0.5px solid #ECE9E0; }
+.row:last-child { border: none; }
+.demo { flex: 0 0 230px; font-family: var(--font-display); font-weight: 400; font-size: 18pt; letter-spacing: 0.18em; line-height: 1; text-transform: uppercase; }
+.demo--lowercase { text-transform: none; letter-spacing: 0.02em; font-weight: 400; }
+.spec { font-family: var(--font-body); font-size: 9.5pt; line-height: 1.45; flex: 1; }
+.spec b { font-weight: 500; }
+.spec .em { color: var(--lapp-ink-muted); font-size: 8.5pt; }
+</style></head><body>
+<div class="card">
+  <div class="row">
+    <span class="demo">Inhabited</span>
+    <span class="spec"><b>Capitals — display, tracked open.</b> Exhibition titles, family names, section markers, signatures. <span class="em">letter-spacing 0.14 → 0.22em</span></span>
+  </div>
+  <div class="row">
+    <span class="demo demo--lowercase">A room is never empty.</span>
+    <span class="spec"><b>Sentence case — body.</b> Default for paragraphs, captions, fiche commerciale. <span class="em">tracking 0.005em, hyphens auto</span></span>
+  </div>
+  <div class="row">
+    <span class="demo" style="font-size:10pt;letter-spacing:0.28em;font-weight:500;font-family:var(--font-body);">Provenance</span>
+    <span class="spec"><b>Labels — body, all caps, very tracked.</b> Section markers in detailed fiche. <span class="em">10pt · 500 · 0.28em</span></span>
+  </div>
+</div>
+</body></html>

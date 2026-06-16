@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- @dsCard group="Spacing" name="Grid · A4 + margins" subtitle="210 × 297 mm. 20 mm default margin; 14 mm tight. No folio." viewport="700x340" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="card.css">
+<style>
+.card { padding: 26px 28px; align-items: center; gap: 24px; }
+.a4 {
+  width: 180px; height: 254px;
+  background: #FFFFFF;
+  border: 0.5px solid #0A0A0A;
+  position: relative;
+  box-sizing: border-box;
+}
+.a4 .margin {
+  position: absolute;
+  inset: 13px;        /* ≈ 20mm on a 210mm-wide A4 scaled to 180px */
+  border: 0.4px dashed #B5A98F;
+}
+.a4 .label-top { position: absolute; top: -16px; left: 0; right: 0; text-align: center; font-family: var(--font-body); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lapp-ink-muted); }
+.a4 .label-w { position: absolute; bottom: -14px; left: 0; right: 0; text-align: center; font-family: var(--font-body); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lapp-ink-muted); }
+.a4 .label-h { position: absolute; left: -36px; top: 50%; transform: translateY(-50%) rotate(-90deg); font-family: var(--font-body); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lapp-ink-muted); white-space: nowrap; }
+.a4 .inside {
+  position: absolute; inset: 13px;
+  padding: 8px;
+  font-family: var(--font-body);
+  font-size: 6px;
+  line-height: 1.5;
+  color: #B5A98F;
+  letter-spacing: 0.02em;
+}
+.spec { flex: 1; font-size: 10pt; line-height: 1.5; }
+.spec h3 { font-family: var(--font-body); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lapp-ink-muted); margin: 0 0 8px; }
+.spec ul { list-style: none; padding: 0; margin: 0; font-size: 9.5pt; line-height: 1.6; }
+.spec ul li b { font-weight: 500; letter-spacing: 0.02em; }
+.spec ul li span { color: var(--lapp-ink-muted); }
+</style></head><body>
+<div class="card">
+  <div class="a4">
+    <span class="label-top">A4 portrait</span>
+    <span class="label-w">210 mm</span>
+    <span class="label-h">297 mm</span>
+    <div class="margin"></div>
+    <div class="inside">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+  </div>
+  <div class="spec">
+    <h3>Editorial grid</h3>
+    <ul>
+      <li><b>Page</b> &nbsp; 210 × 297 mm <span>(A4)</span></li>
+      <li><b>Margin</b> &nbsp; 20 mm <span>default</span></li>
+      <li><b>Margin tight</b> &nbsp; 14 mm <span>dense pages</span></li>
+      <li><b>Gutter</b> &nbsp; 8 mm</li>
+      <li><b>Runaround</b> &nbsp; 9 — 12 px <span>around floated objects</span></li>
+      <li><b>Page mark</b> &nbsp; none <span>no folio, no header, no footer</span></li>
+    </ul>
+  </div>
+</div>
+</body></html>

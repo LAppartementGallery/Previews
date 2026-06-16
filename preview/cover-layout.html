@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Cover layout" subtitle="Title centred middle, dates beneath right-aligned. Artist name above logo, bottom-left." viewport="700x300" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="card.css">
+<style>
+.card { padding: 0; display: block; height: 300px; position: relative; background: #2B1A0F; color: #EFE5D7; overflow: hidden; }
+.bg {
+  position: absolute; inset: 0;
+  background: #2B1A0F;
+}
+
+.title-block { position: absolute; left: 0; right: 0; top: 32px; display: flex; justify-content: center; }
+.title-lockup { display: inline-block; text-align: right; transform: translateX(-32px); }
+.title { display: block; font-family: var(--font-display); font-weight: 400; font-size: 44pt; letter-spacing: 0.06em; line-height: 1; text-transform: uppercase; margin: 0; color: #EFE5D7; text-align: center; }
+.dates { display: block; margin-top: 12px; margin-right: 0.5em; font-family: var(--font-body); font-size: 9pt; letter-spacing: 0.22em; text-transform: uppercase; color: #EFE5D7; opacity: 0.82; text-align: right; white-space: nowrap; }
+
+.artist { position: absolute; left: 28px; top: 60%; transform: translateY(-50%); font-family: var(--font-display); font-weight: 400; font-size: 14pt; letter-spacing: 0.18em; text-transform: uppercase; color: #EFE5D7; }
+.logo { position: absolute; left: 28px; bottom: 22px; width: 130px; height: 28px; background-color: #EFE5D7; -webkit-mask: url("../assets/lappartement-monogram-black.svg") left center / contain no-repeat; mask: url("../assets/lappartement-monogram-black.svg") left center / contain no-repeat; opacity: 0.92; }
+</style></head><body>
+<div class="card">
+  <div class="bg"></div>
+
+  <div class="title-block">
+    <div class="title-lockup">
+      <h1 class="title">Inhabited</h1>
+      <div class="dates">28.05 — 17.07.2026</div>
+    </div>
+  </div>
+
+  <div class="artist">Aria Lemaître</div>
+  <div class="logo" role="img" aria-label="L'Appartement"></div>
+</div>
+</body></html>

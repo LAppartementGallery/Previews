@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Page · quote" subtitle="Full-bleed accent, oversize quote marks at corners, centred line." viewport="700x260" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="card.css">
+<style>
+.card { padding: 0; height: 340px; display: block; position: relative; background: #875026; overflow: hidden; color: #EFE5D7; }
+
+.column {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+}
+
+.text-wrap { position: relative; }
+
+.mark {
+  position: absolute;
+  font-family: var(--font-quote);
+  font-weight: 900;
+  font-size: 110pt;
+  line-height: 0.55;
+  letter-spacing: 0.16em;
+  color: #EFE5D7;
+  user-select: none;
+  pointer-events: none;
+}
+.mark--open  { top: -36px; left: -68px; }
+.mark--close { bottom: -56px; right: -56px; }
+
+.text {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14pt;
+  line-height: 1.45;
+  text-align: justify;
+  hyphens: auto;
+  margin: 0;
+}
+
+.sig {
+  margin-top: 44px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 9pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: right;
+}
+</style></head><body>
+<div class="card">
+  <div class="column">
+    <div class="text-wrap">
+      <span class="mark mark--open">&ldquo;</span>
+      <p class="text">I use somewhat the same strategy in physical space and on paper. It is abstract, but it is an element in space that obeys a certain strategy, the same one I use in drawing.</p>
+      <span class="mark mark--close">&rdquo;</span>
+    </div>
+    <div class="sig">Paulo Monteiro</div>
+  </div>
+</div>
+</body></html>

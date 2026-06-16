@@ -1,0 +1,20 @@
+<!doctype html>
+<!-- @dsCard group="Colors" name="Colors · paper & ink" subtitle="Warm near-black on paper white — the entire body-text foundation." viewport="700x240" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="card.css">
+<style>
+.card { padding: 28px; }
+.tile { width: 200px; height: 160px; padding: 14px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
+.tile-name { font-family: var(--font-body); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; }
+.tile-hex { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.04em; }
+.tile.paper { background: #FFFFFF; border: 0.5px solid #ECE9E0; color: #0A0A0A; }
+.tile.paper .tile-name { color: var(--lapp-ink-muted); }
+.tile.black { background: #0A0A0A; color: #FFFFFF; }
+.tile.muted { background: #5B5B5B; color: #FFFFFF; }
+.notes { flex: 1; padding-left: 6px; font-size: 10pt; line-height: 1.45; max-width: 200px; }
+.notes b { font-weight: 500; }
+</style></head><body>
+<div class="card">
+  <div class="tile paper"><span class="tile-name">Paper</span><span class="tile-hex">#FFFFFF</span></div>
+  <div class="tile black"><span class="tile-name">Black ink</span><span class="tile-hex">#0A0A0A</span></div>
+  <div class="notes">The whole foundation: warm near-black on paper white. Body text uses these two colours and nothing else.</div>
+</div>
+</body></html>

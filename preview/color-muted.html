@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- @dsCard group="Colors" name="Colors · muted greys" subtitle="Codes, section labels, year column in detailed fiches. Never body." viewport="700x200" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="card.css">
+<style>
+.card { padding: 28px; }
+.tile { width: 150px; height: 130px; padding: 12px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
+.tile-name { font-family: var(--font-body); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; }
+.tile-hex { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.04em; }
+.t1 { background: #5B5B5B; color: #fff; }
+.t2 { background: #9A9A9A; color: #fff; }
+.t3 { background: #FAF8F4; color: #0A0A0A; border: 0.5px solid #ECE9E0; }
+.t3 .tile-name { color: var(--lapp-ink-muted); }
+.notes { flex: 1; font-size: 9pt; line-height: 1.45; max-width: 240px; padding-left: 6px; }
+.notes b { font-weight: 500; }
+</style></head><body>
+<div class="card">
+  <div class="tile t1"><span class="tile-name">Ink muted</span><span class="tile-hex">#5B5B5B</span></div>
+  <div class="tile t2"><span class="tile-name">Ink faint</span><span class="tile-hex">#9A9A9A</span></div>
+  <div class="tile t3"><span class="tile-name">Paper soft</span><span class="tile-hex">#FAF8F4</span></div>
+  <div class="notes"><b>Reserved.</b> Muted greys are for codes (Artlogic), section labels, the year column in detailed fiches. Body text never uses them. Paper soft is optional — a warm second white if a surface needs to step back without leaving paper.</div>
+</div>
+</body></html>

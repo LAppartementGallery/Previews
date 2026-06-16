@@ -1,0 +1,168 @@
+/* =========================================================================
+   L'Appartement — Brand tokens
+   -------------------------------------------------------------------------
+   Imports the type system, then defines the editorial primitives:
+     colour, type scale, A4 grid, spacing, semantic styles.
+   Per-exhibition overrides (accent, accent-text, bio title) are exposed
+   at :root and meant to be overridden inline per fact-sheet.
+   ========================================================================= */
+
+@import url("../fonts/fonts.css");
+
+:root {
+  /* -- Foundations ------------------------------------------------------- */
+  --lapp-black:        #0A0A0A;   /* text on white — never pure #000 */
+  --lapp-paper:        #FFFFFF;   /* fond blanc pur */
+  --lapp-paper-soft:   #FAF8F4;   /* whisper of warmth, optional */
+  --lapp-rule:         #0A0A0A;   /* hairlines, same as text */
+  --lapp-ink-muted:    #5B5B5B;   /* labels, codes, captions */
+  --lapp-ink-faint:    #9A9A9A;   /* very tertiary */
+
+  /* -- Per-exhibition variables (override these inline) ------------------ */
+  --accent-color:      #875026;   /* fil rouge identitaire, ex: brun terre */
+  --accent-text-color: #EFE5D7;   /* texte sur fond accent — crème teintée */
+  --bio-title-color:   #2F4A2A;   /* nom de l'artiste page 2, dérivé DA */
+
+  /* -- A4 print grid ----------------------------------------------------- */
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --page-margin: 20mm;          /* marges éditoriales */
+  --page-margin-tight: 14mm;    /* marges réduites quand contenu dense */
+  --gutter: 8mm;
+  --runaround: 20px;            /* habillage texte autour d'un objet */
+
+  /* -- Type scale (print, in pt for stability) --------------------------- */
+  --t-display-xl:  50pt;        /* couverture, titre expo full-bleed */
+  --t-display-lg:  28pt;        /* nom de famille bio */
+  --t-display-md:  28pt;        /* titres section internes */
+  --t-display-sm:  18pt;        /* sous-titres, prénom */
+  --t-quote:       30pt;        /* citation page accent */
+  --t-body-lg:     11pt;        /* corps éditorial principal */
+  --t-body:        10pt;        /* corps standard */
+  --t-caption:     8.5pt;       /* fiche commerciale, légendes */
+  --t-micro:       8.5pt;       /* codes Artlogique, micro-mentions */
+
+  /* Tracking — display is tracked open; body is tight */
+  --tracking-display: 0.14em;   /* CAPITALES trackées */
+  --tracking-uppercase: 0.18em; /* labels, ALL CAPS section markers */
+  --tracking-body: 0.005em;
+  --tracking-body-loose: 0.02em;
+
+  --leading-display: 1.02;
+  --leading-quote:   1.22;
+  --leading-body:    1.40;
+  --leading-tight:   1.20;
+
+  /* -- Weights ----------------------------------------------------------- */
+  --w-light:    400;
+  --w-regular:  400;
+  --w-medium:   500;
+  --w-semi:     600;
+  --w-bold:     700;
+}
+
+/* -- Semantic typographic styles ------------------------------------------ */
+.lapp-cover-title {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' 32;
+  font-weight: var(--w-regular);
+  font-size: var(--t-display-xl);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-transform: uppercase;
+}
+
+.lapp-section-title {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' 32;
+  font-weight: var(--w-regular);
+  font-size: var(--t-display-md);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-tight);
+  text-transform: uppercase;
+}
+
+.lapp-family-name {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' 32;
+  font-weight: var(--w-regular);
+  font-size: var(--t-display-lg);
+  letter-spacing: var(--tracking-display);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--bio-title-color);
+}
+
+.lapp-first-name {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: var(--w-light);
+  font-size: var(--t-display-sm);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: var(--bio-title-color);
+}
+
+.lapp-body {
+  font-family: var(--font-body);
+  font-weight: var(--w-light);
+  font-size: var(--t-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  text-align: justify;
+  text-align-last: left;
+  text-wrap: pretty;
+  hyphens: auto;
+  hanging-punctuation: first last;
+}
+
+.lapp-caption {
+  font-family: var(--font-body);
+  font-weight: var(--w-regular);
+  font-size: var(--t-caption);
+  letter-spacing: var(--tracking-body-loose);
+  line-height: 1.35;
+}
+
+.lapp-label {
+  font-family: var(--font-body);
+  font-weight: var(--w-medium);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-uppercase);
+  text-transform: uppercase;
+  color: var(--lapp-ink-muted);
+}
+
+.lapp-code {
+  font-family: var(--font-body);
+  font-weight: var(--w-regular);
+  font-size: var(--t-micro);
+  letter-spacing: 0.04em;
+  color: var(--lapp-ink-muted);
+}
+
+.lapp-price {
+  font-family: var(--font-body);
+  font-weight: var(--w-bold);
+  font-size: var(--t-body);
+  letter-spacing: 0.01em;
+}
+
+.lapp-quote {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' 32;
+  font-weight: var(--w-light);
+  font-size: var(--t-quote);
+  line-height: var(--leading-quote);
+  letter-spacing: 0.005em;
+  text-wrap: balance;
+}
+
+/* -- Base reset for fact-sheet pages -------------------------------------- */
+html, body { background: var(--lapp-paper); color: var(--lapp-black); }
+body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+::selection { background: var(--lapp-black); color: var(--lapp-paper); }

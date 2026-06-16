@@ -1,0 +1,79 @@
+/* =========================================================================
+   L'Appartement — Typeface declarations
+   -------------------------------------------------------------------------
+   Brand fonts (Inter / Inter Display) shipped as local .woff2 in /fonts/.
+   Playfair Display loaded from Google Fonts for the curly quote glyphs
+   (no brand font supplied for that role).
+   ========================================================================= */
+
+/* ----- Inter (body) ---------------------------------------------------- */
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----- Inter Display (display) ----------------------------------------- */
+@font-face {
+  font-family: 'Inter Display';
+  src: url('../../fonts/InterDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Display';
+  src: url('../../fonts/InterDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Display';
+  src: url('../../fonts/InterDisplay-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Display';
+  src: url('../../fonts/InterDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----- Quote glyph face (Google Fonts — IvyMode is non-redistributable) - */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+
+:root {
+  --font-display: 'Inter Display', 'Inter', 'Forma DJR Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body:    'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-quote:   'Playfair Display', 'Ivy Mode', Georgia, serif;
+}
+
+.lapp-display { font-family: var(--font-display); }
+.lapp-body    { font-family: var(--font-body); }

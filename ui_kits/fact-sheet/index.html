@@ -1,0 +1,594 @@
+<!doctype html>
+<!-- @dsCard group="UI Kit — Fact Sheet" name="Fact-Sheet — INHABITED / Lemaître" subtitle="Print-ready A4, 9 pages, sample artist Aria Lemaître / INHABITED. Drop your own images into the slots." viewport="794x1123" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>L'Appartement — Fact Sheet · Aria Lemaître · INHABITED</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="image-slot.js"></script>
+<style>
+  /* ---- Per-exhibition variables (override of tokens.css) -------------- */
+  :root {
+    --accent-color:      #875026;   /* INHABITED — earth brown */
+    --accent-text-color: #EFE5D7;   /* warm cream */
+    --bio-title-color:   #2F4A2A;   /* forest green */
+  }
+
+  /* ---- Print + screen page mechanics ---------------------------------- */
+  @page { size: A4; margin: 0; }
+
+  html, body { margin: 0; padding: 0; }
+  body { background: #C9C4BB; font-family: var(--font-body); }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    background: var(--lapp-paper);
+    color: var(--lapp-black);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  @media screen {
+    body { padding: 28px 0 48px; }
+    .page {
+      margin: 0 auto 22px;
+      box-shadow: 0 18px 48px -16px rgba(0,0,0,0.30), 0 4px 10px rgba(0,0,0,0.08);
+    }
+  }
+  @media print {
+    body { background: var(--lapp-paper); padding: 0; }
+    .page { box-shadow: none; margin: 0; }
+  }
+
+  /* ---- Reusable editorial primitives ---------------------------------- */
+  .frame {
+    position: absolute;
+    inset: var(--page-margin);
+  }
+  .frame--tight { inset: var(--page-margin-tight); }
+
+  /* ===================================================================
+     PAGE 1 — COVER
+     =================================================================== */
+  .cover {
+    background: #2B1A0F;       /* dark warm — the "detail" backdrop */
+    color: var(--accent-text-color);
+  }
+  .cover-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #2B1A0F;
+  }
+  .cover-art image-slot {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cover-title-block {
+    position: absolute;
+    top: 24mm;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--accent-text-color);
+  }
+  .cover-title-lockup {
+    display: inline-block;
+    text-align: right;
+    transform: translateX(-12mm);
+  }
+  .cover-title-block .title {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 50pt;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+  .cover-title-block .dates {
+    display: block;
+    margin-top: 9mm;
+    margin-right: 0.5em;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 10pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-text-color);
+    opacity: 0.85;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .cover-foot {
+    position: absolute;
+    left: 20mm;
+    bottom: 20mm;
+    color: var(--accent-text-color);
+  }
+  .cover-artist {
+    position: absolute;
+    left: 20mm;
+    top: 68%;
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--accent-text-color);
+  }
+  .cover-foot .logo {
+    width: 56mm;
+    height: auto;
+    filter: brightness(0) invert(1);   /* render the black SVG as cream */
+    opacity: 0.92;
+  }
+
+  /* ===================================================================
+     PAGE 2 — BIOGRAPHY
+     =================================================================== */
+  .bio .name-block {
+    margin-bottom: 16mm;
+  }
+  .bio .first-name {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 30pt;
+    letter-spacing: 0.005em;
+    color: var(--bio-title-color);
+    margin: 0 0 6px 0;
+    padding: 0;
+    line-height: 1;
+  }
+  .bio .family-name {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 48pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bio-title-color);
+    margin: 0 0 0 -0.04em;
+    padding: 0;
+    line-height: 0.92;
+  }
+  .bio .portrait {
+    float: left;
+    width: 68mm;
+    height: 88mm;
+    margin: 0 25px 25px 0;
+    shape-outside: margin-box;
+    shape-margin: 25px;
+    background: #E7E2D8;
+    overflow: hidden;
+  }
+  .bio .portrait image-slot {
+    width: 100%; height: 100%;
+  }
+  .bio .body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 10.5pt;
+    line-height: 1.40;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+  }
+  .bio .body p { margin: 0 0 3mm 0; }
+
+  /* ===================================================================
+     PAGE 3 — QUOTE
+     =================================================================== */
+  .quote {
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+  }
+  .quote .column {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 130mm;
+  }
+  .quote .text-wrap { position: relative; }
+  .quote .mark {
+    position: absolute;
+    font-family: var(--font-quote);
+    font-weight: 900;
+    font-size: 140pt;
+    line-height: 0.55;
+    letter-spacing: 0.16em;
+    color: var(--accent-text-color);
+    user-select: none;
+    pointer-events: none;
+  }
+  .quote .mark--open  { top: -12mm; left: -2mm; }
+  .quote .mark--close { bottom: -16mm; right: -2mm; }
+  .quote .mark--open  { top: -16mm; left: -28mm; }
+  .quote .mark--close { bottom: -24mm; right: -22mm; }
+
+  .quote .text {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 22pt;
+    line-height: 1.40;
+    letter-spacing: 0.005em;
+    text-align: justify;
+    hyphens: auto;
+    color: var(--accent-text-color);
+    margin: 0;
+  }
+  .quote .sig {
+    margin-top: 18mm;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 9pt;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    text-align: right;
+    color: var(--accent-text-color);
+  }
+
+  /* ===================================================================
+     WORK CYCLE — PLATE
+     =================================================================== */
+  .plate { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22mm 0; }
+  .plate .plate-frame {
+    background: var(--lapp-paper);
+    /* width/height set inline per work for proportional scaling */
+  }
+  .plate .plate-frame image-slot { width: 100%; height: 100%; }
+
+  .plate .fiche {
+    margin-top: 8mm;
+    margin-left: 20mm;
+    align-self: flex-start;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 11pt;
+    line-height: 1.40;
+    color: var(--lapp-black);
+    text-align: left;
+  }
+  .plate .fiche .row { display: block; }
+  .plate .fiche .row.italic { font-style: italic; }
+  .plate .fiche .artist {
+    font-weight: 400;
+    font-size: 16pt;
+    letter-spacing: 0.005em;
+    line-height: 1.1;
+    margin-bottom: 1mm;
+  }
+  .plate .fiche .artist .family {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+  .plate .fiche .title-year {
+    font-weight: 400;
+    font-size: 11pt;
+    margin-bottom: 4mm;
+  }
+  .plate .fiche .price {
+    margin-top: 7mm;
+    font-weight: 500;
+    font-size: 13pt;
+    letter-spacing: 0.005em;
+  }
+  .plate .fiche .price .usd {
+    font-weight: 400;
+    font-size: 8pt;
+    vertical-align: super;
+    margin-left: 2mm;
+    letter-spacing: 0.04em;
+  }
+  .plate .fiche .sold {
+    margin-top: 7mm;
+    font-weight: 500;
+    font-size: 13pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* WORK CYCLE — CLOSE-UP (full bleed, no text) */
+  .closeup { background: #1B1410; }
+  .closeup image-slot { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .closeup .placeholder-tex {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 50% at 40% 50%, rgba(214,160,99,0.5) 0%, rgba(27,20,16,0) 70%),
+      radial-gradient(40% 40% at 70% 30%, rgba(255,210,150,0.25) 0%, rgba(27,20,16,0) 75%),
+      linear-gradient(135deg, #2D1E15, #15100C);
+  }
+  .closeup--b .placeholder-tex {
+    background:
+      radial-gradient(55% 70% at 60% 40%, rgba(170,110,70,0.35) 0%, rgba(20,14,10,0) 75%),
+      linear-gradient(180deg, #261A12 0%, #120C09 100%);
+  }
+
+  /* ===================================================================
+     PAGE — DETAILED FICHE (provenance / exhibitions / literature)
+     =================================================================== */
+  .detail h2.work-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 16pt;
+    font-style: italic;
+    letter-spacing: 0.01em;
+    margin: 0 0 5mm 0;
+    line-height: 1.1;
+  }
+  .detail h2.work-title .year { font-style: normal; color: var(--lapp-ink-muted); font-weight: 400; }
+  .detail .block { margin-bottom: 14mm; }
+  .detail .block:last-child { margin-bottom: 0; }
+  .detail .block-label {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 11pt;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--lapp-black);
+    margin: 0 0 6mm 0;
+  }
+  .detail .list {
+    list-style: none;
+    margin: 0; padding: 0;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+  .detail .list li { margin-bottom: 1mm; }
+  .detail .notes {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 9.5pt;
+    line-height: 1.45;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+  }
+  .detail .work-section + .work-section { margin-top: 18mm; padding-top: 0; }
+
+  /* ===================================================================
+     PAGE — FINAL / L'APPARTEMENT
+     =================================================================== */
+  .final { display: flex; flex-direction: column; align-items: center; padding: 22mm 24mm 18mm; }
+  .final .wordmark {
+    width: 110mm;
+    height: 26mm;
+    background-color: var(--lapp-black);
+    -webkit-mask: url("../../assets/lappartement-complete-black.svg") center / contain no-repeat;
+            mask: url("../../assets/lappartement-complete-black.svg") center / contain no-repeat;
+    margin: 0 0 -10mm 0;
+  }
+  .final .building {
+    width: 110mm; height: auto;
+    margin-bottom: 6mm;
+  }
+  .final .manifesto {
+    width: 150mm;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    color: var(--lapp-black);
+  }
+  .final .manifesto p { margin: 0 0 3mm 0; }
+  .final .manifesto p:last-child { margin: 0; }
+
+</style>
+</head>
+<body>
+
+<!-- ====================================================================
+     PAGE 1 — COVER
+     ==================================================================== -->
+<section class="page cover" data-screen-label="01 Cover">
+  <div class="cover-art">
+    <image-slot id="cover-art" placeholder="Cover artwork detail (full-bleed)" shape="rect"></image-slot>
+  </div>
+
+  <div class="cover-title-block">
+    <div class="cover-title-lockup">
+      <h1 class="title">Inhabited</h1>
+      <div class="dates">28.05 — 17.07.2026</div>
+    </div>
+  </div>
+
+  <div class="cover-artist">Aria Lemaître</div>
+  <div class="cover-foot">
+    <img class="logo" src="../../assets/lappartement-monogram-black.svg" alt="L'Appartement">
+  </div>
+</section>
+
+<!-- ====================================================================
+     PAGE 2 — BIOGRAPHY
+     ==================================================================== -->
+<section class="page bio" data-screen-label="02 Biography">
+  <div class="frame">
+    <div class="name-block">
+      <p class="first-name">Aria</p>
+      <h2 class="family-name">Lemaître</h2>
+    </div>
+
+    <div class="portrait">
+      <image-slot id="artist-portrait" placeholder="Artist portrait" shape="rect"></image-slot>
+    </div>
+
+    <div class="body">
+      <p>Aria Lemaître (b. 1986, Lyon) lives and paints in Marseille, where her studio
+      occupies a former tailor's workshop on the rue Saint-Ferréol. Trained at the
+      École nationale supérieure des beaux-arts de Lyon and, briefly, at the Royal
+      Drawing School in London, Lemaître has worked exclusively in oil since 2011.</p>
+
+      <p>Her practice circles a single, narrow subject: rooms that someone has just
+      left. Coats on chairs, half-drawn curtains, a folded newspaper, the weight of
+      light on a wall that has held it for a hundred years. The works are small in
+      number — she completes between six and nine canvases a year — and dense
+      in observation. Critics have likened her surfaces to Vilhelm Hammershøi and,
+      latterly, to the slow domestic interiors of Lois Dodd.</p>
+
+      <p>INHABITED is the second chapter of a body of work begun in 2022. The
+      first chapter — exhibited at Galerie Lelong &amp; Co., Paris, in autumn 2024 —
+      proposed the interior as a site of recent absence. The second chapter
+      proposes the interior as a site of recent return: someone has come back
+      into the room, even if we cannot see them. Each canvas in the exhibition
+      is the same modestly-furnished apartment, observed at a different hour
+      of the same day.</p>
+
+      <p>Lemaître's work is held in the collections of the Musée d'art moderne
+      de la Ville de Paris, the Fondation Carmignac, and a number of private
+      collections in Switzerland, Germany, and the United States. She is the
+      recipient of the 2023 Prix Marcel Duchamp shortlist and the 2024 Villa
+      Médicis residency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     PAGE 3 — QUOTE
+     ==================================================================== -->
+<section class="page quote" data-screen-label="03 Quote">
+  <div class="column">
+    <div class="text-wrap">
+      <span class="mark mark--open">&ldquo;</span>
+      <p class="text">A room is never empty. It is only between two people. The painting is the half-second after someone has left and the half-second before someone else walks in.</p>
+      <span class="mark mark--close">&rdquo;</span>
+    </div>
+    <div class="sig">Aria Lemaître</div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     PAGE 4 — WORK A · PLATE  (Threshold, 200 × 150 cm — large)
+     ==================================================================== -->
+<section class="page plate" data-screen-label="04 Work A · Plate">
+  <!-- 200×150cm landscape canvas. Largest in the document → dominates but does not fill. -->
+  <div class="plate-frame" style="width: 160mm; height: 120mm;">
+    <image-slot id="work-1-image" placeholder="Threshold — full work, on white" shape="rect"></image-slot>
+  </div>
+  <div class="fiche" style="margin-left: 25mm;">
+    <p class="row artist">Aria <span class="family">Lemaître</span></p>
+    <p class="row title-year">Threshold, 2025</p>
+    <span class="row">Oil on linen</span>
+    <span class="row">200 x 150 cm</span>
+    <span class="row italic">78 3/4 x 59 in.</span>
+    <span class="row">(LAM-2025-01)</span>
+    <p class="row price">Price (excl. VAT): 95'000<span class="usd">USD</span></p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     PAGE 5 — WORK A · CLOSE-UP
+     ==================================================================== -->
+<section class="page closeup" data-screen-label="05 Work A · Close-up">
+  <div class="placeholder-tex"></div>
+  <image-slot id="work-1-closeup" placeholder="Threshold — detail, full-bleed" shape="rect"></image-slot>
+</section>
+
+<!-- ====================================================================
+     PAGE 6 — WORK B · PLATE  (Quiet Tenant, 30 × 40 cm — small)
+     ==================================================================== -->
+<section class="page plate" data-screen-label="06 Work B · Plate">
+  <!-- 30×40cm portrait. Proportionally smaller to Threshold, nudged up. -->
+  <div class="plate-frame" style="width: 90mm; height: 120mm;">
+    <image-slot id="work-2-image" placeholder="Quiet Tenant — full work" shape="rect"></image-slot>
+  </div>
+  <div class="fiche" style="margin-left: 60mm;">
+    <p class="row artist">Aria <span class="family">Lemaître</span></p>
+    <p class="row title-year">Quiet Tenant, 2024</p>
+    <span class="row">Oil on linen, artist's frame</span>
+    <span class="row">30 x 40 cm</span>
+    <span class="row italic">11 3/4 x 15 3/4 in.</span>
+    <span class="row">(LAM-2024-07)</span>
+    <p class="row sold">Sold</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     PAGE 7 — WORK B · CLOSE-UP
+     ==================================================================== -->
+<section class="page closeup closeup--b" data-screen-label="07 Work B · Close-up">
+  <div class="placeholder-tex"></div>
+  <image-slot id="work-2-closeup" placeholder="Quiet Tenant — detail" shape="rect"></image-slot>
+</section>
+
+<!-- ====================================================================
+     PAGE 8 — DETAILED FICHE · Threshold (provenance + literature)
+     ==================================================================== -->
+<section class="page detail" data-screen-label="08 Detail · Threshold">
+  <div class="frame">
+
+    <div class="block">
+      <p class="block-label">Provenance</p>
+      <ul class="list">
+        <li>Studio of the artist, Marseille</li>
+        <li>L'Appartement Gallery, Geneva</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <p class="block-label">Literature</p>
+      <ul class="list">
+        <li>Hélène Roussel, "Le second retour", <em>Art Press</em> n°538, April 2026, p.42 — 45 (ill.)</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================================
+     PAGE 9 — DETAILED FICHE · Quiet Tenant
+     ==================================================================== -->
+<section class="page detail" data-screen-label="09 Detail · Quiet Tenant">
+  <div class="frame">
+
+    <div class="block">
+      <p class="block-label">Provenance</p>
+      <ul class="list">
+        <li>Private Collection, Brazil</li>
+        <li>Private Collection, Europe</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================================
+     PAGE 9 — FINAL · L'APPARTEMENT
+     ==================================================================== -->
+<section class="page final" data-screen-label="10 L'Appartement">
+  <div class="wordmark" role="img" aria-label="L'Appartement"></div>
+  <img class="building" src="../../assets/immeuble-lappartement.png" alt="">
+
+  <div class="manifesto">
+    <p>Our overarching ambition is to cultivate a dynamic community that engages both seasoned collectors and younger generations, while revitalising the Geneva art scene.</p>
+
+    <p>Founded by Thea Montauti d&rsquo;Harcourt Lyginos, L&rsquo;Appartement is a space dedicated to hosting focused exhibitions that highlight specific artists projects and dialogues.</p>
+
+    <p>Through diverse exhibitions, collaborations and off-site projects, L&rsquo;Appartement Gallery, Geneva aims to create a dynamic podium for emerging and established artists worldwide and to create a dialogue between modern, contemporary art and design. At the core of the gallery&rsquo;s vision is the nurturing of emerging talents alongside historically significant artists.</p>
+
+    <p>Embracing a modern, hybrid gallery model, L&rsquo;Appartement seeks to build connections between the art industry and other sectors, thus expanding the influence of art on diverse audiences. Nestled on the second floor of a historic building in Geneva, the gallery offers an intimate setting for collaborative initiatives, involving artists, international galleries and independent curators. Complementing the gallery&rsquo;s presence in Geneva, in July 2026, the gallery will host an off-site exhibition in the cycladic island of Antiparos, curated by Craig Burnett.</p>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- @dsCard group="Type" name="Type · family name" subtitle="Display caps at 60pt, tracked 0.10em. First name above in light italic." viewport="700x220" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="card.css">
+<style>
+.card { display: block; padding: 40px 36px; }
+
+.name-stack {
+  display: inline-block;
+}
+
+.first {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 30pt;
+  letter-spacing: 0.005em;
+  color: #2F4A2A;
+  margin: 0 0 6px 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.family {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 50pt;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2F4A2A;
+  margin: 0 0 0 -0.04em;       /* pull L's optical edge flush left with A */
+  padding: 0;
+  line-height: 0.92;
+}
+
+.meta { margin-top: 22px; display: flex; gap: 18px; font-family: var(--font-body); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lapp-ink-muted); }
+.meta b { color: var(--lapp-black); font-weight: 500; }
+</style></head><body>
+<div class="card">
+  <div class="name-stack">
+    <p class="first">Aria</p>
+    <h1 class="family">Lemaître</h1>
+  </div>
+  <div class="meta">
+    <span><b>First</b> 30pt · 300 · 0.005em</span>
+    <span><b>Family</b> 50pt · 400 · 0.06em</span>
+    <span><b>Edge</b> pixel-flush</span>
+  </div>
+</div>
+</body></html>

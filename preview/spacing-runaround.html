@@ -1,0 +1,35 @@
+<!doctype html>
+<!-- @dsCard group="Spacing" name="Grid · text runaround" subtitle="9–12 px inner margin around floated portrait on the bio page." viewport="700x240" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="card.css">
+<style>
+.card { padding: 24px 28px; }
+.bio { width: 340px; padding: 14px; border: 0.4px solid #ECE9E0; background: #FFFFFF; position: relative; }
+.bio .first { font-family: var(--font-display); font-weight: 400; font-size: 10pt; letter-spacing: 0.04em; color: #2F4A2A; margin: 0 0 2px; line-height: 1; }
+.bio .family { font-family: var(--font-display); font-weight: 400; font-size: 22pt; letter-spacing: 0.06em; text-transform: uppercase; color: #2F4A2A; margin: 0 0 22px; line-height: 0.92; }
+.bio .portrait { float: left; width: 92px; height: 124px; background: #E7E2D8; margin: 0 20px 4px 0; position: relative; shape-outside: margin-box; shape-margin: 20px; }
+.bio .portrait::after { content: 'Portrait'; position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-body); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: #B5A98F; }
+.bio .body { font-family: var(--font-body); font-weight: 400; font-size: 7pt; line-height: 1.5; text-align: justify; text-align-last: left; hyphens: auto; color: #4a4a4a; }
+.bio .body p { margin: 0 0 4px; }
+.bio .body p:first-of-type { margin-top: 0; }
+.gap-marker { position: absolute; right: -54px; top: 80px; font-family: var(--font-body); font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lapp-ink-muted); }
+.gap-marker::before { content: ''; position: absolute; left: -50px; top: 4px; width: 46px; border-top: 0.4px dashed var(--lapp-ink-muted); }
+
+.spec { flex: 1; font-size: 9.5pt; font-weight: 400; line-height: 1.55; padding-left: 6px; }
+.spec b { font-weight: 500; }
+.spec .small { display:block; font-size: 8.5pt; letter-spacing: 0.04em; color: var(--lapp-ink-muted); margin-top: 4px; }
+</style></head><body>
+<div class="card">
+  <div class="bio">
+    <p class="first">Aria</p>
+    <h2 class="family">Lemaître</h2>
+    <div class="portrait"></div>
+    <div class="body">
+      <p>Aria Lemaître (b. 1986, Lyon) lives and paints in Marseille, where her studio occupies a former tailor's workshop on the rue Saint-Ferréol. Her practice circles a single, narrow subject: rooms that someone has just left.</p>
+      <p>The works are small in number — she completes between six and nine canvases a year — and dense in observation.</p>
+    </div>
+    <span class="gap-marker">20px runaround</span>
+  </div>
+  <div class="spec">
+    <b>Text wraps the portrait.</b> 20 px inner margin between the floated image and the body. The family name block sits well above with generous breathing room; bio text starts aligned to the top of the portrait.<span class="small">CSS · shape-outside: margin-box · shape-margin: 20px</span>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Page · L'Appartement (closing)" subtitle="Logo, building line-art, manifesto. No address, no contact, no social." viewport="700x340" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="card.css">
+<style>
+.card { padding: 24px 28px; flex-direction: column; align-items: center; gap: 0; }
+.logo-mark {
+  width: 320px;
+  height: 64px;
+  background-color: #0A0A0A;
+  -webkit-mask: url("../assets/lappartement-complete-black.svg") center / contain no-repeat;
+          mask: url("../assets/lappartement-complete-black.svg") center / contain no-repeat;
+}
+.building {
+  width: 320px;
+  margin-top: -22px;
+  margin-bottom: 4px;
+}
+.manifesto {
+  width: 440px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 9.5pt;
+  line-height: 1.55;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+}
+.manifesto p { margin: 0 0 10px; }
+.manifesto p:last-child { margin: 0; }
+</style></head><body>
+<div class="card">
+  <div class="logo-mark"></div>
+  <img class="building" src="../assets/immeuble-lappartement.png" alt="">
+  <div class="manifesto">
+    <p>Our overarching ambition is to cultivate a dynamic community that engages both seasoned collectors and younger generations, while revitalising the Geneva art scene.</p>
+    <p>Founded by Thea Montauti d&rsquo;Harcourt Lyginos, L&rsquo;Appartement is a space dedicated to hosting focused exhibitions that highlight specific artists projects and dialogues.</p>
+  </div>
+</div>
+</body></html>

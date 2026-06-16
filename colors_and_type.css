@@ -1,0 +1,34 @@
+/* =========================================================================
+   colors_and_type.css — root-level convenience re-export
+   -------------------------------------------------------------------------
+   The brand truth lives in:
+     system/fonts/fonts.css   (@font-face / Inter)
+     system/brand/tokens.css  (colours, type scale, A4 grid, semantics)
+
+   This file is the project-wide entry point. Import it from any HTML
+   artifact:    <link rel="stylesheet" href="colors_and_type.css">
+   ========================================================================= */
+
+@import url("./system/brand/tokens.css");
+
+/* -- Semantic shorthand element styles (h1 → .lapp-cover-title, etc) ------ */
+h1 { font: inherit; }
+h1.cover     { font-family: var(--font-display); font-weight: var(--w-regular); font-size: var(--t-display-xl); letter-spacing: var(--tracking-display); text-transform: uppercase; line-height: var(--leading-display); margin: 0; }
+h1.section   { font-family: var(--font-display); font-weight: var(--w-regular); font-size: var(--t-display-md); letter-spacing: var(--tracking-display); text-transform: uppercase; line-height: var(--leading-tight); margin: 0; }
+h2.family    { font-family: var(--font-display); font-weight: var(--w-regular); font-size: var(--t-display-lg); letter-spacing: var(--tracking-display); text-transform: uppercase; line-height: 0.95; color: var(--bio-title-color); margin: 0; }
+h3.first     { font-family: var(--font-display); font-weight: var(--w-light);   font-size: var(--t-display-sm); letter-spacing: 0.02em; line-height: 1.1; color: var(--bio-title-color); margin: 0; }
+
+p            { font-family: var(--font-body); font-weight: var(--w-light); font-size: var(--t-body); line-height: var(--leading-body); text-align: justify; text-align-last: left; hyphens: auto; margin: 0 0 0.8em 0; }
+p.lead       { font-size: var(--t-body-lg); line-height: 1.5; }
+p.caption    { font-size: var(--t-caption); line-height: 1.35; text-align: left; text-align-last: left; }
+
+small        { font-size: var(--t-caption); }
+strong       { font-weight: var(--w-bold); }
+em           { font-style: italic; }
+
+.label       { font-family: var(--font-body); font-weight: var(--w-medium); font-size: var(--t-micro); letter-spacing: var(--tracking-uppercase); text-transform: uppercase; color: var(--lapp-ink-muted); }
+.code        { font-family: var(--font-body); font-size: var(--t-micro); letter-spacing: 0.04em; color: var(--lapp-ink-muted); }
+
+/* -- Box reset for editorial pages --------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+img, svg { display: block; max-width: 100%; }
